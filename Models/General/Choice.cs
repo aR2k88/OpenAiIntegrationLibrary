@@ -1,13 +1,9 @@
-﻿using System.Text.Json.Serialization;
-
+﻿
 namespace OpenAiIntegrationLibrary.Models.General;
 
 public class Choice
 {
-    [JsonPropertyName("index")]
-    public int Index { get; set; }
-    [JsonPropertyName("message")]
-    public Message Message { get; set; }
-    [JsonPropertyName("finish_reason")]
-    public string FinishReason { get; set; }
+    public int index { get; set; }
+    public Message message { get; set; }
+    public string finish_reason { get; set; }
 }

@@ -4,10 +4,7 @@ namespace OpenAiIntegrationLibrary.Models.General;
 
 public class Usage
 {
-    [JsonPropertyName("prompt_tokens")]
-    public int PromptTokens { get; set; }
-    [JsonPropertyName("completion_tokens")]
-    public int CompletionTokens { get; set; }
-    [JsonPropertyName("total_tokens")]
-    public int TotalTokens { get; set; }
+    public int prompt_tokens { get; set; }
+    public int completion_tokens { get; set; }
+    public int total_tokens { get; set; }
 }

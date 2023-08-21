@@ -4,10 +4,10 @@ namespace OpenAiIntegrationLibrary.Models.ResponseModels.ChatCompletionResponse;
 
 public class ChatCompletionResponse
 {
-    public string Id { get; set; }
-    public string Object { get; set; }
-    public long Created { get; set; }
-    public string Model { get; set; }
-    public Choice[] Choices { get; set; }
-    public Usage Usage { get; set; }
+    public string id { get; set; }
+    public string @object { get; set; }
+    public long created { get; set; }
+    public string model { get; set; }
+    public Choice[] choices { get; set; }
+    public Usage usage { get; set; }
 }

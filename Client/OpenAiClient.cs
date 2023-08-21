@@ -1,10 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json;
 using OpenAiIntegrationLibrary.ExceptionHandling;
 using OpenAiIntegrationLibrary.Helpers;
 using OpenAiIntegrationLibrary.Interfaces;
@@ -65,13 +61,13 @@ public class OpenAiClient : IOpenAiClient
                 size = EnumConverter.ImageSizeEnumToRequest(imageSize)
             };
 
-            var jsonContent = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
+            var jsonContent = new StringContent(JsonSerializer.Serialize(requestData), Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync(ImageCreationUrl, jsonContent);
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
                 // Deserialize the response content into your ApiResponse class
-                var apiResponse = JsonConvert.DeserializeObject<ImageCreationResponseModel>(responseContent);
+                var apiResponse = JsonSerializer.Deserialize<ImageCreationResponseModel>(responseContent);
                 return apiResponse;
             }
 
@@ -133,15 +129,15 @@ public class OpenAiClient : IOpenAiClient
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                var apiResponse = JsonConvert.DeserializeObject<TranscribeAudioResponseModel>(responseContent);
+                var apiResponse = JsonSerializer.Deserialize<TranscribeAudioResponseModel>(responseContent);
                 return apiResponse;
             }
-            throw new Exception("OpenAI API request failed with status code: " + response.StatusCode);
+            throw new ApiException("OpenAI API request failed with status code: " + response.StatusCode);
         }
         catch (Exception ex)
         {
             // Handle exceptions here
-            throw new Exception("An error occurred while sending OpenAI API request.", ex);
+            throw new ApiException("An error occurred while sending OpenAI API request.", ex);
         }
     }
 
@@ -160,7 +156,7 @@ public class OpenAiClient : IOpenAiClient
             await memoryStream.DisposeAsync();
             if (response.IsSuccessStatusCode)
             {
-                var apiResponse = JsonConvert.DeserializeObject<TranscribeAudioResponseModel>(responseContent);
+                var apiResponse = JsonSerializer.Deserialize<TranscribeAudioResponseModel>(responseContent);
                 return apiResponse;
             }
 
@@ -176,19 +172,25 @@ public class OpenAiClient : IOpenAiClient
     {
         try
         {
-            var jsonContent = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
-            
+            var jsonContent = new StringContent(JsonSerializer.Serialize(requestData), Encoding.UTF8, "application/json");
+
             var response = await _httpClient.PostAsync(CompletionsUrl, jsonContent);
 
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
                 // Deserialize the response content into your ApiResponse class
-                var apiResponse = JsonConvert.DeserializeObject<ChatCompletionResponse>(responseContent);
+                var apiResponse = JsonSerializer.Deserialize<ChatCompletionResponse>(responseContent);
                 return apiResponse;
             }
 
-            throw new ApiException("OpenAI API request failed with status code: " + response.StatusCode);
+            var errorContent = await response.Content.ReadAsStringAsync();
+
+            throw new ApiException("OpenAI API request failed.", (int)response.StatusCode, errorContent);
+        }
+        catch (ApiException)
+        {
+            throw;
         }
         catch (Exception ex)
         {
