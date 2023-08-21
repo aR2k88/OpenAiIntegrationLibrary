@@ -1,4 +1,6 @@
-﻿using OpenAiIntegrationLibrary.Models;
+﻿using System.IO;
+using System.Threading.Tasks;
+using OpenAiIntegrationLibrary.Models;
 using OpenAiIntegrationLibrary.Models.General;
 using OpenAiIntegrationLibrary.Models.ResponseModels.ChatCompletionResponse;
 using OpenAiIntegrationLibrary.Models.ResponseModels.ImageCreationResponseModel;

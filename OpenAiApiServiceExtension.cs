@@ -23,7 +23,7 @@ public static class ApiServiceExtensions
         string chatModel = DefaultChatModel,
         string audioModel = DefaultAudioModel)
     {
-        services.AddHttpClient<IOpenAiClient, OpenAiClient>(client =>
+        services.AddHttpClient<IOpenAiClient, OpenAiClient>( (client, sp) =>
         {
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", openAiApiKey);
             // Create an instance of ApiService with the provided openAiApiKey

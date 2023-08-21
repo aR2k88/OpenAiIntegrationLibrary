@@ -1,4 +1,6 @@
-﻿namespace OpenAiIntegrationLibrary.ExceptionHandling;
+﻿using System;
+
+namespace OpenAiIntegrationLibrary.ExceptionHandling;
 
 public class ApiException : Exception
 {

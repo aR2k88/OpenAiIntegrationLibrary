@@ -1,4 +1,5 @@
-﻿using OpenAiIntegrationLibrary.Models.General;
+﻿using System.Collections.Generic;
+using OpenAiIntegrationLibrary.Models.General;
 
 namespace OpenAiIntegrationLibrary.Models.ResponseModels.ImageCreationResponseModel;
 

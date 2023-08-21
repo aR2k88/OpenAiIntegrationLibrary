@@ -1,4 +1,5 @@
-﻿using OpenAiIntegrationLibrary.Models;
+﻿using System;
+using OpenAiIntegrationLibrary.Models;
 
 namespace OpenAiIntegrationLibrary.Helpers;
 
