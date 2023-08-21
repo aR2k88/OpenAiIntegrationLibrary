@@ -1,0 +1,12 @@
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\bin\Release\net7.0\OpenAiIntegrationLibrary.deps.json
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\bin\Release\net7.0\OpenAiIntegrationLibrary.dll
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\bin\Release\net7.0\OpenAiIntegrationLibrary.pdb
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\OpenAiIntegrationLibrary.csproj.AssemblyReference.cache
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\OpenAiIntegrationLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\OpenAiIntegrationLibrary.AssemblyInfoInputs.cache
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\OpenAiIntegrationLibrary.AssemblyInfo.cs
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\OpenAiIntegrationLibrary.csproj.CoreCompileInputs.cache
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\OpenAiIntegrationLibrary.dll
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\refint\OpenAiIntegrationLibrary.dll
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\OpenAiIntegrationLibrary.pdb
+C:\Repos\OpenAiIntegrationLibrary\OpenAiIntegrationLibrary\obj\Release\net7.0\ref\OpenAiIntegrationLibrary.dll
